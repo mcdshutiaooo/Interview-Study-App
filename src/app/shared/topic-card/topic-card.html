@@ -1,0 +1,14 @@
+<article class="topic-card">
+  <div class="topline">
+    <span>{{ topic.category }}</span>
+    <strong>{{ percent }}%</strong>
+  </div>
+  <h3>{{ topic.title }}</h3>
+  <div class="bar"><span [style.width.%]="percent"></span></div>
+  <p>{{ topic.completed }} of {{ topic.total }} items · {{ topic.minutes }} min studied</p>
+  <div class="chips">
+    @for (tag of topic.weakTags; track tag) {
+      <span>{{ tag }}</span>
+    }
+  </div>
+</article>

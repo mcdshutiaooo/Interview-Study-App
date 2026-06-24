@@ -1,0 +1,14 @@
+<section class="review-list">
+  @for (question of reviewQuestions; track question.id) {
+    <app-study-card>
+      <article class="review-item">
+        <div>
+          <span>{{ question.category }}</span>
+          <h2>{{ question.prompt }}</h2>
+          <p>{{ question.topic }} · {{ question.status }}</p>
+        </div>
+        <strong>{{ question.weaknessScore }}</strong>
+      </article>
+    </app-study-card>
+  }
+</section>

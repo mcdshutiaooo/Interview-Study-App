@@ -1,0 +1,36 @@
+<section class="settings-grid">
+  <app-study-card>
+    <h2>Study goal</h2>
+    <label>
+      Daily target
+      <input type="number" min="5" max="60" step="5" [(ngModel)]="dailyGoal" />
+      <span>minutes per day</span>
+    </label>
+  </app-study-card>
+
+  <app-study-card>
+    <h2>Preferences</h2>
+    <label>
+      Theme
+      <select [(ngModel)]="theme">
+        <option>Light</option>
+        <option>Soft contrast</option>
+      </select>
+    </label>
+    <label class="toggle">
+      Daily reminder
+      <input type="checkbox" [(ngModel)]="reminders" />
+    </label>
+  </app-study-card>
+
+  <app-study-card tone="warm">
+    <h2>Progress</h2>
+    <p>Reset local mock progress when you want to rehearse from the beginning.</p>
+    <button type="button">Reset progress</button>
+  </app-study-card>
+
+  <app-study-card>
+    <h2>App info</h2>
+    <p>Interview Study PWA · local mock data · no backend connected yet.</p>
+  </app-study-card>
+</section>

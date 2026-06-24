@@ -1,0 +1,25 @@
+<section class="session-layout">
+  <div class="session-main">
+    <app-study-card tone="warm">
+      <div class="session-top">
+        <div>
+          <p>20-minute session</p>
+          <h2>Question {{ currentIndex() + 1 }} of {{ sessionQuestions().length }}</h2>
+        </div>
+        <strong>{{ minutesLeft }} min left</strong>
+      </div>
+      <div class="bar"><span [style.width.%]="sessionProgress"></span></div>
+    </app-study-card>
+
+    <app-question-panel [question]="currentQuestion" (statusChange)="markQuestion($event)" />
+  </div>
+
+  <aside class="session-side">
+    <app-stats-card label="Completed" [value]="currentIndex() + ' items'" helper="This session" />
+    <app-stats-card label="Needs review" value="3 items" helper="Weakest first later" />
+    <app-study-card>
+      <h3>Session rhythm</h3>
+      <p>Read, answer out loud, reveal, then mark what happened. Keep moving.</p>
+    </app-study-card>
+  </aside>
+</section>

@@ -1,0 +1,14 @@
+<aside class="side-nav">
+  <a class="brand" routerLink="/dashboard" aria-label="Interview Study dashboard">
+    <span>IS</span>
+    <strong>Interview Study</strong>
+  </a>
+  <nav aria-label="Primary">
+    @for (item of items; track item.route) {
+      <a [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.route === '/dashboard' }">
+        <span aria-hidden="true">{{ item.icon }}</span>
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+</aside>

@@ -1,0 +1,49 @@
+.session-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.session-main, .session-side {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.session-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+p, h2, h3 {
+  margin: 0;
+}
+
+p {
+  color: var(--muted);
+}
+
+.session-top strong {
+  align-self: start;
+  color: var(--accent-strong);
+}
+
+.bar {
+  height: .65rem;
+  margin-top: 1rem;
+  background: #efe7dc;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: var(--warm);
+}
+
+@media (min-width: 960px) {
+  .session-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+}

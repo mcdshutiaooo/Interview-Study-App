@@ -1,0 +1,62 @@
+.progress-layout, .stats-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.ring-wrap {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  justify-items: start;
+}
+
+p, h2 {
+  margin: 0;
+}
+
+p, span, small {
+  color: var(--muted);
+}
+
+.stats-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.chart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.week-chart {
+  height: 240px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: end;
+  gap: .65rem;
+}
+
+.week-chart div {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  gap: .35rem;
+  height: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.bar {
+  align-self: end;
+  width: 100%;
+  min-height: 24px;
+  border-radius: 999px 999px 8px 8px;
+  background: linear-gradient(180deg, var(--accent), #b9d8cc);
+}
+
+@media (min-width: 760px) {
+  .ring-wrap {
+    grid-template-columns: auto 1fr;
+  }
+}

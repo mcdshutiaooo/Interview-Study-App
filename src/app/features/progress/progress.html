@@ -1,0 +1,32 @@
+<section class="progress-layout">
+  <app-study-card>
+    <div class="ring-wrap">
+      <app-progress-ring [value]="totalPercent" label="Complete" />
+      <div>
+        <p>Overall progress</p>
+        <h2>{{ summary.totalCompleted }} of {{ summary.totalItems }} study items</h2>
+        <span>Progress is based on total mock study items completed.</span>
+      </div>
+    </div>
+  </app-study-card>
+  <div class="stats-grid">
+    <app-stats-card label="Streak" [value]="summary.streakDays + ' days'" helper="Longest this month" />
+    <app-stats-card label="Weekly time" value="126 min" helper="Across seven days" />
+  </div>
+</section>
+
+<app-study-card>
+  <div class="chart-heading">
+    <h2>Weekly progress</h2>
+    <span>Minutes studied</span>
+  </div>
+  <div class="week-chart">
+    @for (day of weekly; track day.day) {
+      <div>
+        <span class="bar" [style.height.%]="day.minutes * 4"></span>
+        <strong>{{ day.day }}</strong>
+        <small>{{ day.minutes }}m</small>
+      </div>
+    }
+  </div>
+</app-study-card>

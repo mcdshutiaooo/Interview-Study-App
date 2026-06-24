@@ -1,0 +1,55 @@
+.topic-card {
+  display: grid;
+  gap: .8rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.topline, .chips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.topline span, p {
+  color: var(--muted);
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.bar {
+  height: .55rem;
+  background: #edf0ec;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.chips {
+  justify-content: flex-start;
+}
+
+.chips span {
+  min-height: 32px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 .75rem;
+  color: #56645f;
+  background: #eef3ef;
+  border-radius: 999px;
+  font-size: .85rem;
+}

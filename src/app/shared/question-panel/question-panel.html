@@ -1,0 +1,20 @@
+<article class="question-panel">
+  <div class="meta">
+    <span>{{ question.category }}</span>
+    <span>{{ question.topic }}</span>
+  </div>
+  <h2>{{ question.prompt }}</h2>
+  @if (revealed()) {
+    <div class="answer">
+      <span>Suggested answer</span>
+      <p>{{ question.answer }}</p>
+    </div>
+  } @else {
+    <button class="primary" type="button" (click)="reveal()">Reveal answer</button>
+  }
+  <div class="actions">
+    <button type="button" (click)="mark('completed')">Known</button>
+    <button type="button" (click)="mark('skipped')">Uncertain</button>
+    <button type="button" (click)="mark('needs-review')">Forgotten</button>
+  </div>
+</article>

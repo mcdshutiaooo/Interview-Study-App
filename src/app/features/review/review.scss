@@ -1,0 +1,42 @@
+.review-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.review-item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+span {
+  display: inline-grid;
+  min-height: 32px;
+  place-items: center;
+  padding: 0 .75rem;
+  color: var(--accent-strong);
+  background: #edf7f3;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+h2 {
+  margin: .75rem 0 .35rem;
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+strong {
+  min-width: 54px;
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #fff4e8;
+  color: #8b5b24;
+}

@@ -1,0 +1,21 @@
+.stats-card {
+  min-height: 112px;
+  display: grid;
+  gap: .35rem;
+  align-content: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+span, small {
+  color: var(--muted);
+}
+
+strong {
+  color: var(--ink);
+  font-size: clamp(1.55rem, 4vw, 2.1rem);
+  line-height: 1;
+}

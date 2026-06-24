@@ -1,0 +1,32 @@
+<section class="hero-grid">
+  <app-study-card tone="accent" class="goal-card">
+    <div>
+      <p>Daily goal</p>
+      <h2>{{ summary.studiedMinutes }} of {{ summary.dailyGoalMinutes }} min</h2>
+      <span>{{ remainingMinutes }} minutes remaining today</span>
+    </div>
+    <div class="mini-bar"><span [style.width.%]="todayPercent"></span></div>
+    <a routerLink="/study">Continue where you left off</a>
+  </app-study-card>
+  <app-progress-ring [value]="overallProgress" label="Overall" />
+</section>
+
+<section class="stats-grid">
+  <app-stats-card label="Current streak" [value]="summary.streakDays + ' days'" helper="Consistent this week" />
+  <app-stats-card label="Completed" [value]="summary.totalCompleted + ' items'" helper="Across all topics" />
+  <app-stats-card label="Next focus" value="Angular" helper="Signals and routing" />
+</section>
+
+<section class="section-heading">
+  <div>
+    <p>Topic coverage</p>
+    <h2>Keep the next session focused</h2>
+  </div>
+  <a routerLink="/topics">View all</a>
+</section>
+
+<div class="topic-grid">
+  @for (topic of focusTopics; track topic.id) {
+    <app-topic-card [topic]="topic" />
+  }
+</div>

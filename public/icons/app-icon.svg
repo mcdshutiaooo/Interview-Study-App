@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Interview Study icon">
+  <rect width="512" height="512" rx="112" fill="#3c8f7c"/>
+  <path fill="#f6f5f1" d="M152 142c0-22 18-40 40-40h128c22 0 40 18 40 40v228c0 22-18 40-40 40H192c-22 0-40-18-40-40V142Z"/>
+  <path fill="#d99345" d="M198 162h116c8 0 14 6 14 14s-6 14-14 14H198c-8 0-14-6-14-14s6-14 14-14Z"/>
+  <path fill="#202724" d="M202 234h108c9 0 16 7 16 16s-7 16-16 16H202c-9 0-16-7-16-16s7-16 16-16Zm0 62h76c9 0 16 7 16 16s-7 16-16 16h-76c-9 0-16-7-16-16s7-16 16-16Z" opacity=".82"/>
+  <circle cx="344" cy="344" r="54" fill="#3c8f7c"/>
+  <path fill="#fff" d="m322 344 15 15 31-37 15 13-44 52-33-31 16-12Z"/>
+</svg>

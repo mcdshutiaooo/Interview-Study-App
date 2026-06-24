@@ -1,0 +1,29 @@
+.category-row {
+  display: flex;
+  gap: .65rem;
+  overflow-x: auto;
+  padding-bottom: .5rem;
+}
+
+button {
+  min-height: 42px;
+  white-space: nowrap;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 .9rem;
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+button:first-child {
+  color: white;
+  background: var(--accent);
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
