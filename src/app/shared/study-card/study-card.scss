@@ -1,15 +1,16 @@
 .study-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  background: var(--surface-lowest);
+  border: 0;
+  border-radius: var(--radius-card);
   box-shadow: var(--shadow);
-  padding: clamp(1rem, 2vw, 1.4rem);
+  padding: clamp(1.35rem, 2.4vw, 2rem);
 }
 
 .accent {
-  background: linear-gradient(135deg, #eef8f5, #ffffff);
+  background: var(--primary);
+  color: white;
 }
 
 .warm {
-  background: linear-gradient(135deg, #fff7ed, #ffffff);
+  background: linear-gradient(135deg, #fff7e8, #ffffff 72%);
 }

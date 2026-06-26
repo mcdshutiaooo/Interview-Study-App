@@ -3,11 +3,10 @@ import { questions } from '../../core/data/mock-study-data';
 import { StudyQuestion, StudyStatus } from '../../core/models/study.models';
 import { QuestionPanel } from '../../shared/question-panel/question-panel';
 import { StatsCard } from '../../shared/stats-card/stats-card';
-import { StudyCard } from '../../shared/study-card/study-card';
 
 @Component({
   selector: 'app-study-session',
-  imports: [QuestionPanel, StatsCard, StudyCard],
+  imports: [QuestionPanel, StatsCard],
   templateUrl: './study-session.html',
   styleUrl: './study-session.scss',
 })

@@ -1,7 +1,7 @@
 .settings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 h2, p {
@@ -10,6 +10,10 @@ h2, p {
 
 p, span {
   color: var(--muted);
+}
+
+h2 {
+  color: var(--primary);
 }
 
 label {
@@ -21,12 +25,18 @@ label {
 
 input, select {
   min-height: 48px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-control);
   padding: 0 .85rem;
-  background: #fbfcfb;
+  background: var(--surface-lowest);
   color: var(--ink);
   font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
 }
 
 .toggle {
@@ -44,9 +54,9 @@ input, select {
 button {
   min-height: 46px;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-control);
   padding: 0 1rem;
-  color: #8b5b24;
-  background: #ffe8cc;
+  color: white;
+  background: var(--primary);
   font-weight: 800;
 }

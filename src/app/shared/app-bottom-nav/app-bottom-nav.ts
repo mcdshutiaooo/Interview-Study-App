@@ -9,5 +9,5 @@ import { navItems } from '../../core/data/mock-study-data';
   styleUrl: './app-bottom-nav.scss',
 })
 export class AppBottomNav {
-  protected readonly items = navItems.slice(0, 5);
+  protected readonly items = navItems;
 }

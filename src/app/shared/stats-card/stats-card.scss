@@ -1,21 +1,22 @@
 .stats-card {
   min-height: 112px;
   display: grid;
-  gap: .35rem;
+  gap: .2rem;
   align-content: center;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  padding: 1rem;
-  box-shadow: var(--shadow-soft);
+  background: var(--surface-lowest);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow);
 }
 
 span, small {
   color: var(--muted);
+  font-weight: 650;
 }
 
 strong {
-  color: var(--ink);
-  font-size: clamp(1.55rem, 4vw, 2.1rem);
+  color: var(--primary);
+  font-family: Geist, Inter, sans-serif;
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
   line-height: 1;
 }

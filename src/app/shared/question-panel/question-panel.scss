@@ -1,11 +1,13 @@
 .question-panel {
   display: grid;
-  gap: 1.15rem;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  gap: 1.5rem;
+  justify-items: center;
+  background: var(--surface-lowest);
+  border: 0;
+  border-radius: var(--radius-card);
   box-shadow: var(--shadow);
-  padding: clamp(1.1rem, 3vw, 1.6rem);
+  padding: clamp(1.25rem, 4vw, 3rem);
+  text-align: center;
 }
 
 .meta, .actions {
@@ -20,21 +22,42 @@
   place-items: center;
   padding: 0 .8rem;
   border-radius: 999px;
-  background: #f1f4f1;
+  background: var(--surface-highest);
   color: var(--muted);
+  font-weight: 800;
+}
+
+.meta .difficulty {
+  color: var(--sage);
+  background: var(--sage-soft);
 }
 
 h2 {
+  max-width: 780px;
   margin: 0;
-  font-size: clamp(1.35rem, 4vw, 2rem);
-  line-height: 1.2;
+  color: var(--primary);
+  font-size: clamp(1.65rem, 4vw, 2.55rem);
+  line-height: 1.15;
+}
+
+.study-visual {
+  width: min(100%, 760px);
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.study-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .answer {
+  width: min(100%, 760px);
   padding: 1rem;
-  border-radius: var(--radius-sm);
-  background: #f7faf7;
-  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface-low);
+  text-align: left;
 }
 
 .answer span {
@@ -43,10 +66,10 @@ h2 {
 }
 
 .actions button, .primary {
-  min-height: 46px;
+  min-height: 56px;
   border: 0;
-  border-radius: 999px;
-  padding: 0 1rem;
+  border-radius: var(--radius-control);
+  padding: 0 1.4rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -54,10 +77,23 @@ h2 {
 .primary {
   width: fit-content;
   color: white;
-  background: var(--accent);
+  background: var(--primary);
 }
 
 .actions button {
-  background: #eef3ef;
-  color: var(--ink);
+  min-width: min(210px, 100%);
+  background: var(--surface-container);
+  color: var(--primary);
+}
+
+.actions .known {
+  color: white;
+  background: var(--primary);
+}
+
+@media (max-width: 640px) {
+  .actions {
+    width: 100%;
+    display: grid;
+  }
 }

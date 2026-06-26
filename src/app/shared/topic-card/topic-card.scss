@@ -1,11 +1,16 @@
 .topic-card {
   display: grid;
-  gap: .8rem;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow-soft);
+  gap: .85rem;
+  background: var(--surface-lowest);
+  border: 0;
+  border-radius: var(--radius-card);
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-2px);
 }
 
 .topline, .chips {
@@ -18,16 +23,19 @@
 
 .topline span, p {
   color: var(--muted);
+  font-weight: 650;
 }
 
 h3 {
   margin: 0;
-  font-size: 1.05rem;
+  color: var(--primary);
+  font-size: 1.18rem;
+  line-height: 1.25;
 }
 
 .bar {
-  height: .55rem;
-  background: #edf0ec;
+  height: .65rem;
+  background: var(--sage-soft);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -36,7 +44,7 @@ h3 {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: var(--accent);
+  background: var(--sage);
 }
 
 .chips {
@@ -49,7 +57,8 @@ h3 {
   place-items: center;
   padding: 0 .75rem;
   color: #56645f;
-  background: #eef3ef;
+  background: var(--surface-container);
   border-radius: 999px;
-  font-size: .85rem;
+  font-size: .82rem;
+  font-weight: 800;
 }

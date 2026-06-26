@@ -1,32 +1,47 @@
-<section class="hero-grid">
-  <app-study-card tone="accent" class="goal-card">
-    <div>
-      <p>Daily goal</p>
-      <h2>{{ summary.studiedMinutes }} of {{ summary.dailyGoalMinutes }} min</h2>
-      <span>{{ remainingMinutes }} minutes remaining today</span>
+<section class="dashboard-grid">
+  <app-study-card class="progress-card">
+    <div class="progress-copy">
+      <span class="badge">Milestone reached</span>
+      <h2>Overall Progress</h2>
+      <p>You've mastered 14 out of 20 core interview categories. Keep the momentum going to hit your 90% goal by Friday.</p>
+      <a routerLink="/study">Start 20-Min Study <span>▷</span></a>
     </div>
-    <div class="mini-bar"><span [style.width.%]="todayPercent"></span></div>
-    <a routerLink="/study">Continue where you left off</a>
+    <app-progress-ring [value]="overallProgress" label="Complete" />
   </app-study-card>
-  <app-progress-ring [value]="overallProgress" label="Overall" />
+
+  <app-study-card tone="accent" class="resume-card">
+    <p>Resume learning</p>
+    <h2>System Design: Load Balancing</h2>
+    <span>Next: Dynamic vs Static Algorithms</span>
+    <div class="resume-meta">
+      <strong>Question 8 of 12</strong>
+      <strong>75% Topic Mastery</strong>
+    </div>
+    <div class="mini-bar"><span></span></div>
+    <a routerLink="/study">Continue Journey <span>›</span></a>
+  </app-study-card>
 </section>
 
 <section class="stats-grid">
-  <app-stats-card label="Current streak" [value]="summary.streakDays + ' days'" helper="Consistent this week" />
-  <app-stats-card label="Completed" [value]="summary.totalCompleted + ' items'" helper="Across all topics" />
-  <app-stats-card label="Next focus" value="Angular" helper="Signals and routing" />
+  <app-stats-card label="Current Streak" [value]="summary.streakDays + ' days'" helper="Consistent this week" />
+  <app-stats-card label="Study Time" value="14.5 hrs" helper="Across focused sessions" />
+  <app-stats-card label="Topic Coverage" value="85%" helper="Core categories" />
 </section>
 
 <section class="section-heading">
   <div>
-    <p>Topic coverage</p>
-    <h2>Keep the next session focused</h2>
+    <h2>Recommended for today</h2>
   </div>
   <a routerLink="/topics">View all</a>
 </section>
 
-<div class="topic-grid">
-  @for (topic of focusTopics; track topic.id) {
-    <app-topic-card [topic]="topic" />
+<div class="recommendation-grid">
+  @for (item of recommendations; track item.title) {
+    <article>
+      <div class="rec-icon">{{ item.icon }}</div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <strong>{{ item.status }}</strong>
+    </article>
   }
 </div>

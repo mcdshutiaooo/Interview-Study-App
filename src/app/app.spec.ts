@@ -20,6 +20,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Interview Study');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Ready for your 20-min session today?');
   });
 });

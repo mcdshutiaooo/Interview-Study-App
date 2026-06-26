@@ -1,24 +1,25 @@
 .app-shell {
   min-height: 100dvh;
+  background: var(--surface);
 }
 
 .content-shell {
-  width: min(1120px, 100%);
+  width: min(var(--content-max), 100%);
   margin: 0 auto;
-  padding: 0 clamp(1rem, 3vw, 2rem) calc(6.5rem + env(safe-area-inset-bottom));
+  padding: 0 20px calc(6.75rem + env(safe-area-inset-bottom));
 }
 
 main {
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
 }
 
 @media (min-width: 820px) {
   .app-shell {
     display: grid;
-    grid-template-columns: 250px minmax(0, 1fr);
+    grid-template-columns: 272px minmax(0, 1fr);
   }
 
   .content-shell {
-    padding-bottom: 2rem;
+    padding: 0 clamp(2rem, 5vw, 4rem) 3rem;
   }
 }

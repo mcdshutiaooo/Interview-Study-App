@@ -4,6 +4,14 @@
   }
 </div>
 
+<section class="topics-intro">
+  <div>
+    <span>85% topic coverage</span>
+    <h2>Choose the next calm block of study.</h2>
+  </div>
+  <p>Topics are grouped by category, with weak tags surfaced so your 20-minute session can stay precise.</p>
+</section>
+
 <section class="topic-grid">
   @for (topic of topics; track topic.id) {
     <app-topic-card [topic]="topic" />

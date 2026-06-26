@@ -5,11 +5,11 @@
   bottom: calc(.8rem + env(safe-area-inset-bottom));
   z-index: 20;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: .25rem;
   padding: .45rem;
   background: rgba(255, 255, 255, .94);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(196, 198, 207, .28);
   border-radius: 24px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
@@ -28,16 +28,18 @@ a {
 span {
   font-size: 1.05rem;
   line-height: 1;
+  font-family: Geist, Inter, sans-serif;
+  font-weight: 900;
 }
 
 small {
-  font-size: .72rem;
+  font-size: .65rem;
   font-weight: 700;
 }
 
 .active {
-  color: var(--accent-strong);
-  background: #edf7f3;
+  color: var(--primary);
+  background: var(--surface-high);
 }
 
 @media (min-width: 820px) {
