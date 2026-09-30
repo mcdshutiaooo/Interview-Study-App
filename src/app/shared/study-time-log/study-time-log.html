@@ -1,0 +1,35 @@
+<section class="time-log">
+  <div class="summary">
+    <div>
+      <span class="eyebrow">Weekly preparation log</span>
+      <h2>{{ totalMinutes }} min prepared</h2>
+      <p>{{ statusText }}</p>
+    </div>
+    <div class="target-pill">
+      <strong>1 hr</strong>
+      <span>minimum</span>
+    </div>
+  </div>
+
+  <div class="target-bar" aria-label="Weekly study target progress">
+    <span [style.width.%]="targetPercent"></span>
+  </div>
+
+  <div class="day-grid">
+    @for (entry of entries(); track entry.day) {
+      <label>
+        <span>{{ entry.day }}</span>
+        <input
+          type="number"
+          min="0"
+          max="240"
+          step="5"
+          [ngModel]="entry.minutes"
+          (ngModelChange)="updateMinutes(entry.day, $event)"
+          [attr.aria-label]="'Minutes studied on ' + entry.day"
+        />
+        <small>min</small>
+      </label>
+    }
+  </div>
+</section>

@@ -6,11 +6,6 @@ export const routes: Routes = [
     loadComponent: () => import('./features/dashboard/dashboard').then((m) => m.Dashboard),
   },
   {
-    path: 'study',
-    loadComponent: () =>
-      import('./features/study-session/study-session').then((m) => m.StudySession),
-  },
-  {
     path: 'topics',
     loadComponent: () => import('./features/topics/topics').then((m) => m.Topics),
   },

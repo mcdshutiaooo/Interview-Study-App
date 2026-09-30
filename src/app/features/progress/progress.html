@@ -11,9 +11,11 @@
   </app-study-card>
   <div class="stats-grid">
     <app-stats-card label="Streak" [value]="summary.streakDays + ' days'" helper="Longest this month" />
-    <app-stats-card label="Weekly time" value="126 min" helper="Across seven days" />
+    <app-stats-card label="Weekly time" [value]="weeklyMinutes + ' min'" helper="Across seven days" />
   </div>
 </section>
+
+<app-study-time-log [weeklyTargetMinutes]="60" />
 
 <app-study-card>
   <div class="chart-heading">

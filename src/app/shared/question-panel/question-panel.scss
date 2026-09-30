@@ -40,16 +40,66 @@ h2 {
   line-height: 1.15;
 }
 
-.study-visual {
+.option-grid,
+.blank-card {
   width: min(100%, 760px);
-  overflow: hidden;
-  border-radius: 18px;
 }
 
-.study-visual svg {
-  display: block;
-  width: 100%;
-  height: auto;
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: .85rem;
+  text-align: left;
+}
+
+.option-grid button {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  border: 0;
+  border-radius: 18px;
+  padding: .9rem 1rem;
+  color: var(--primary);
+  background: var(--surface-low);
+  font-weight: 800;
+  text-align: left;
+}
+
+.option-grid button span {
+  width: 32px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: var(--sage);
+  background: var(--sage-soft);
+}
+
+.option-grid .correct {
+  color: var(--sage);
+  background: var(--sage-soft);
+}
+
+.blank-card {
+  display: grid;
+  gap: .6rem;
+  padding: 1.35rem;
+  border-radius: 18px;
+  background: #fff1d8;
+  text-align: left;
+}
+
+.blank-card span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.blank-card strong {
+  color: var(--primary);
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  letter-spacing: .04em;
 }
 
 .answer {
@@ -63,6 +113,10 @@ h2 {
 .answer span {
   color: var(--muted);
   font-size: .9rem;
+}
+
+.answer strong {
+  color: var(--primary);
 }
 
 .actions button, .primary {

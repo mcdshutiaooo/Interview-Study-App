@@ -1,4 +1,5 @@
 export type StudyStatus = 'completed' | 'skipped' | 'needs-review';
+export type QuestionType = 'objective' | 'fill-blank';
 
 export interface NavItem {
   label: string;
@@ -20,8 +21,11 @@ export interface StudyQuestion {
   id: number;
   topic: string;
   category: string;
+  type: QuestionType;
   prompt: string;
+  options?: string[];
   answer: string;
+  explanation: string;
   status: StudyStatus;
   weaknessScore: number;
 }

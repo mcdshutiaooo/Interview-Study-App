@@ -16,7 +16,7 @@ export class AppHeader {
     if (this.router.url.startsWith('/progress')) return 'Weekly Momentum';
     if (this.router.url.startsWith('/review')) return 'Weakest First';
     if (this.router.url.startsWith('/settings')) return 'Personal Setup';
-    return 'Good morning, Alex.';
+    return 'Good morning, Qin Yee.';
   }
 
   protected get title(): string {

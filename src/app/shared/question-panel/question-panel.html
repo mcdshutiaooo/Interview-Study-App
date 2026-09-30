@@ -1,28 +1,29 @@
 <article class="question-panel">
   <div class="meta">
     <span>Topic: {{ question.category }}</span>
-    <span class="difficulty">Medium</span>
+    <span class="difficulty">{{ question.type === 'objective' ? 'Objective' : 'Fill in the blank' }}</span>
   </div>
   <h2>{{ question.prompt }}</h2>
-  <div class="study-visual" aria-hidden="true">
-    <svg viewBox="0 0 680 300">
-      <rect x="0" y="0" width="680" height="300" rx="18" fill="#fff1d8" />
-      <path d="M128 86h242c22 0 40 18 40 40v24c0 22-18 40-40 40H128c-22 0-40-18-40-40v-24c0-22 18-40 40-40Z" fill="#9ebfb4" stroke="#4e8b80" stroke-width="3" />
-      <path d="M188 132h486M226 132v140M306 132v126M386 132v86M410 160h170v80H256v-92" fill="none" stroke="#4e8b80" stroke-width="3" opacity=".62" />
-      <path d="M410 132 562 172 646 205M124 190v72M306 258l150-30 116 12" fill="none" stroke="#0d5868" stroke-width="3" opacity=".75" />
-      <circle cx="92" cy="70" r="9" fill="#9fcdb7" />
-      <circle cx="386" cy="132" r="10" fill="#008078" />
-      <circle cx="562" cy="172" r="11" fill="#0d5868" />
-      <circle cx="646" cy="205" r="12" fill="#0d5868" />
-      <circle cx="124" cy="262" r="11" fill="#0d5868" />
-      <circle cx="456" cy="228" r="11" fill="#0d5868" />
-      <circle cx="572" cy="240" r="11" fill="#0d5868" />
-    </svg>
-  </div>
+  @if (question.type === 'objective') {
+    <div class="option-grid">
+      @for (option of question.options; track option; let index = $index) {
+        <button type="button" [class.correct]="revealed() && option === question.answer">
+          <span>{{ index + 1 }}</span>
+          {{ option }}
+        </button>
+      }
+    </div>
+  } @else {
+    <div class="blank-card">
+      <span>Answer</span>
+      <strong>________________________</strong>
+    </div>
+  }
   @if (revealed()) {
     <div class="answer">
       <span>Suggested answer</span>
-      <p>{{ question.answer }}</p>
+      <p><strong>{{ question.answer }}</strong></p>
+      <p>{{ question.explanation }}</p>
     </div>
   } @else {
     <button class="primary" type="button" (click)="reveal()">Reveal answer</button>
