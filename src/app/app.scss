@@ -16,7 +16,7 @@ main {
 @media (min-width: 820px) {
   .app-shell {
     display: grid;
-    grid-template-columns: 272px minmax(0, 1fr);
+    grid-template-columns: 252px minmax(0, 1fr);
   }
 
   .content-shell {

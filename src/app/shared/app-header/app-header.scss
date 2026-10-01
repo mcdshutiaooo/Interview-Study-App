@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 2rem 0 3rem;
+  padding: 1.7rem 0 1.2rem;
 }
 
 p, h1 {
@@ -11,15 +11,14 @@ p, h1 {
 }
 
 p {
-  color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.08rem);
+  color: #6479a7;
+  font-size: 1rem;
 }
 
 h1 {
-  max-width: 720px;
-  color: var(--primary);
-  font-size: clamp(1.45rem, 4vw, 2.2rem);
-  font-weight: 750;
+  color: #10184d;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 800;
   line-height: 1.18;
   letter-spacing: 0;
 }
@@ -30,27 +29,33 @@ nav {
   gap: .6rem;
 }
 
-a {
-  min-height: 48px;
+.date {
+  color: #6076a9;
+  font-size: .86rem;
+  white-space: nowrap;
+}
+
+.avatar,
+.chevron {
   display: inline-grid;
   place-items: center;
-  padding: 0 1.1rem;
-  color: var(--primary);
-  background: var(--surface-high);
-  border-radius: 999px;
-  font-weight: 800;
+  color: #233663;
   text-decoration: none;
 }
 
-.icon-link {
-  width: 48px;
-  padding: 0;
-  font-size: 1.2rem;
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffdcca;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(30, 58, 108, .14);
+  font-size: .75rem;
+  font-weight: 800;
 }
 
-.streak-pill {
-  background: var(--surface-high);
-  white-space: nowrap;
+.chevron {
+  font-size: 1.35rem;
 }
 
 @media (max-width: 520px) {
@@ -60,6 +65,10 @@ a {
   }
 
   .app-header nav {
+    gap: .35rem;
+  }
+
+  .date {
     display: none;
   }
 }

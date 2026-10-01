@@ -1,47 +1,10 @@
-<section class="dashboard-grid">
-  <app-study-card class="progress-card">
-    <div class="progress-copy">
-      <span class="badge">Milestone reached</span>
-      <h2>Overall Progress</h2>
-      <p>You've mastered 14 out of 20 core interview categories. Keep the momentum going to hit your 90% goal by Friday.</p>
-      <a routerLink="/study">Start 20-Min Study <span>▷</span></a>
-    </div>
-    <app-progress-ring [value]="overallProgress" label="Complete" />
-  </app-study-card>
-
-  <app-study-card tone="accent" class="resume-card">
-    <p>Resume learning</p>
-    <h2>System Design: Load Balancing</h2>
-    <span>Next: Dynamic vs Static Algorithms</span>
-    <div class="resume-meta">
-      <strong>Question 8 of 12</strong>
-      <strong>75% Topic Mastery</strong>
-    </div>
-    <div class="mini-bar"><span></span></div>
-    <a routerLink="/study">Continue Journey <span>›</span></a>
-  </app-study-card>
+<section class="hero-grid">
+  <article class="goal-card">
+    <div class="study-scene" aria-hidden="true"><div class="book-stack"><i>Angular</i><i>.NET Core</i><i>System Design</i><i>LeetCode</i></div><div class="cat">🐱</div><div class="cup">♡</div></div>
+    <div class="goal-content"><h2>Today’s Goal</h2><div class="goal-row"><app-progress-ring [value]="42" label="of 12" /><div><strong>5 questions due for review</strong><p>Take a few minutes to keep your streak going!</p><a routerLink="/review">Start Review <span aria-hidden="true">→</span></a></div></div></div>
+  </article>
+  <article class="streak-card"><div class="streak-summary"><span class="flame" aria-hidden="true">♨</span><div><strong>12</strong><span>Day Streak</span></div></div><div class="streak-dots" aria-label="Weekly consistency">@for (day of streakDays; track day.label) {<div [class.today]="day.today"><span></span><small>{{ day.label }}</small></div>}</div></article>
 </section>
-
-<section class="stats-grid">
-  <app-stats-card label="Current Streak" [value]="summary.streakDays + ' days'" helper="Consistent this week" />
-  <app-stats-card label="Study Time" value="14.5 hrs" helper="Across focused sessions" />
-  <app-stats-card label="Topic Coverage" value="85%" helper="Core categories" />
-</section>
-
-<section class="section-heading">
-  <div>
-    <h2>Recommended for today</h2>
-  </div>
-  <a routerLink="/topics">View all</a>
-</section>
-
-<div class="recommendation-grid">
-  @for (item of recommendations; track item.title) {
-    <article>
-      <div class="rec-icon">{{ item.icon }}</div>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
-      <strong>{{ item.status }}</strong>
-    </article>
-  }
-</div>
+<section class="metrics-grid" aria-label="Study summary"><article class="metric metric-blue"><span class="metric-icon">▤</span><div><strong>128</strong><span>Total Questions</span></div></article><article class="metric metric-green"><span class="metric-icon">✓</span><div><strong>42</strong><span>Mastered</span></div></article><article class="metric metric-yellow"><span class="metric-icon">◷</span><div><strong>58</strong><span>Reviewing</span></div></article><article class="metric metric-pink"><span class="metric-icon">▤</span><div><strong>28</strong><span>Not Started</span></div></article></section>
+<section class="dashboard-columns"><article class="panel topic-progress"><div class="panel-heading"><h2>Topic Progress</h2></div>@for (topic of topicProgress; track topic.label) {<div class="topic-row"><span>{{ topic.label }}</span><div class="topic-bar"><i [style.width.%]="topic.percent"></i></div><strong>{{ topic.percent }}%</strong><small>{{ topic.completed }} / 40</small></div>}</article><article class="panel quick-actions"><div class="panel-heading"><h2>Quick Actions</h2></div><div class="action-grid"><a routerLink="/topics" class="action action-blue"><span>▢</span><div><strong>Browse Questions</strong><small>View and manage your question bank</small></div><b>›</b></a><a routerLink="/topics" class="action action-pink"><span>＋</span><div><strong>Add New Question</strong><small>Capture a new question</small></div><b>›</b></a><a routerLink="/study" class="action action-pink"><span>♧</span><div><strong>Practice Random Quiz</strong><small>Test yourself with random questions</small></div><b>›</b></a><a routerLink="/progress" class="action action-lilac"><span>▥</span><div><strong>View Analytics</strong><small>Track your learning progress</small></div><b>›</b></a></div></article></section>
+<section class="dashboard-columns lower-grid"><article class="panel recent-panel"><div class="panel-heading"><h2>Recent Questions</h2><a routerLink="/topics">View all&nbsp; →</a></div>@for (question of recentQuestions; track question.id) {<div class="question-row"><span class="question-icon">▤</span><strong>{{ question.prompt }}</strong><span class="chip">{{ question.category }}</span><span class="status" [class.mastered]="question.status === 'completed'">{{ question.status === 'completed' ? 'Mastered' : 'Review' }}</span><small>3 days ago</small><b>•••</b></div>}</article><article class="panel calendar-panel"><div class="panel-heading"><h2>Study Calendar</h2><span>Oct 2026 &nbsp; ‹ &nbsp; ›</span></div><div class="calendar-grid">@for (day of calendarDays; track $index) {<span [class.review-day]="day.review" [class.done-day]="day.done">{{ day.value }}</span>}</div><div class="calendar-legend"><span><i class="blue-dot"></i> Review due <b>5</b></span><span><i class="pink-dot"></i> Questions added <b>3</b></span><span><i class="mint-dot"></i> Practice completed <b>4</b></span><hr /><strong>This Week</strong><span><i class="blue-dot"></i> Review due <b>12</b></span><span><i class="mint-dot"></i> Completed <b>8</b></span><span><i class="lilac-dot"></i> Time spent <b>2h 30m</b></span></div></article></section>

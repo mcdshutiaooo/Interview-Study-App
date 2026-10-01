@@ -1,10 +1,10 @@
 import { DashboardSummary, NavItem, StudyQuestion, Topic, WeeklyProgress } from '../models/study.models';
 
 export const navItems: NavItem[] = [
-  { label: 'Dashboard', route: '/dashboard', icon: '▦' },
-  { label: 'Topics', route: '/topics', icon: '□' },
-  { label: 'Progress', route: '/progress', icon: '⌁' },
-  { label: 'Review', route: '/review', icon: '↺' },
+  { label: 'Dashboard', route: '/dashboard', icon: '⌂' },
+  { label: 'Question Bank', route: '/topics', icon: '▤' },
+  { label: 'Study', route: '/study', icon: '▢' },
+  { label: 'Analytics', route: '/progress', icon: '▥' },
   { label: 'Settings', route: '/settings', icon: '⚙' },
 ];
 

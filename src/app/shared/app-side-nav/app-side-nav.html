@@ -1,6 +1,7 @@
 <aside class="side-nav">
-  <a class="brand" routerLink="/dashboard" aria-label="Lumina dashboard">
-    <strong>Lumina</strong>
+  <a class="brand" routerLink="/dashboard" aria-label="Interview Companion dashboard">
+    <span class="brand-mark" aria-hidden="true">♡</span>
+    <strong>Interview<br />Companion</strong>
   </a>
   <nav aria-label="Primary">
     @for (item of items; track item.route) {
@@ -10,4 +11,8 @@
       </a>
     }
   </nav>
+  <div class="side-note">
+    <span aria-hidden="true">♡</span>
+    <p>“Small steps every day lead to a confident you.”</p>
+  </div>
 </aside>
